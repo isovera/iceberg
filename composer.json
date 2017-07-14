@@ -1,0 +1,70 @@
+{
+    "name": "isovera/iceberg",
+    "description": "Drupal project starter",
+    "type": "project",
+    "license": "MIT",
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ProjectHandler.php"
+        ]
+    },
+    "require": {
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6",
+        "drupal-composer/drupal-scaffold": "^2.2",
+        "wikimedia/composer-merge-plugin": "dev-master",
+        "drupal/core": "~8.0",
+        "drush/drush": "~8.0"
+    },
+    "require-dev": {
+        "behat/mink": "~1.7",
+        "behat/mink-goutte-driver": "~1.2",
+        "jcalderonzumba/gastonjs": "~1.0.2",
+        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+        "mikey179/vfsstream": "~1.2",
+        "phpunit/phpunit": ">=4.8.28 <5",
+        "symfony/css-selector": "~2.8"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "config": {
+      "sort-packages": true
+    },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "post-create-project-cmd": [
+            "Iceberg\\composer\\ProjectHandler::createProject"
+        ]
+    },
+    "extra": {
+        "merge-plugin": {
+            "include": [
+                "project-composer.json"
+            ],
+            "replace": true,
+            "recurse": false,
+            "merge-dev": true,
+            "merge-extra": false,
+            "merge-scripts": false,
+            "merge-extra-deep": false,
+            "ignore-duplicates": false
+        },
+        "installer-paths": {
+            "docroot/core": ["type:drupal-core"],
+            "docroot/libraries/{$name}": ["type:drupal-library"],
+            "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+            "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/contrib/{$name}": ["type:drupal-drush"]
+        }
+    }
+}
