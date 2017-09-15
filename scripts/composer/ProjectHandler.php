@@ -36,7 +36,7 @@ class ProjectHandler {
    */
   const DRUPAL_PROJECT_TYPES = [
     'default',
-    'commence'
+    'commerce'
   ];
 
   /**
