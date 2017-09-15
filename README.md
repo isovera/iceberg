@@ -8,5 +8,5 @@ was inspired by the [Drupal project](https://github.com/drupal-composer/drupal-p
 Create an Iceberg project:
 
 ```php
-composer create-project isovera/iceberg:8.x-dev /path/to/project
+composer create-project isovera/iceberg:dev-master MY_PROJECT
 ```
