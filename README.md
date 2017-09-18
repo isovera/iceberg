@@ -34,7 +34,7 @@ Project Type [default]:
 ```
 The composer.json for each project type can be found in `scripts/composer/templates/`.
 
-### Install contrib modules
+### Download contrib modules
 
 Next, change the working directory and execute the `composer-update` command.
 
