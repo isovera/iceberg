@@ -11,6 +11,7 @@
         "drupal/ctools": "^3.0",
         "drupal/editor_advanced_link": "^1.4",
         "drupal/entity_reference_revisions": "^1.2",
+        "drupal/environment_indicator": "^3.2",
         "drupal/field_group": "^1.0",
         "drupal/google_analytics": "^2.1",
         "drupal/linkit": "^4.0",
